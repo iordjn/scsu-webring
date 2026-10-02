@@ -64,7 +64,7 @@ Members should copy the following HTML into their website. Replace
     href="#"
     aria-label="Previous webring site"
   >
-    &larr; Previous
+    &larr;
   </a>
 
   <a
@@ -72,7 +72,7 @@ Members should copy the following HTML into their website. Replace
     href="#"
     aria-label="Next webring site"
   >
-    Next &rarr;
+    &rarr;
   </a>
 </nav>
 
