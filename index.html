@@ -4,7 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>scsu webring</title>
-    
+    <style>
+        .svg-container {
+            width: 60px;
+            flex: 0 0 60px;
+        }
+
+        .svg-container svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .webring-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .webring-arrow {
+            color: #333;
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 1;
+            text-decoration: none;
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+
+        .webring-arrow:hover {
+            color: #cc1042;
+            transform: translateY(-2px);
+        }
+
+        .webring-arrow:focus-visible {
+            outline: 3px solid #cc1042;
+            outline-offset: 3px;
+        }
+
+        .webring-arrow[aria-disabled="true"] {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,34 +72,4 @@
 <script src="./webring.js"></script>
 
   </body>
-  </html>
-
-  <style>
-        .svg-container {
-            width: 60px;
-            flex: 0 0 60px;
-        }
-
-        .svg-container svg {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .webring-nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .webring-arrow {
-            font-size: 2rem;
-            line-height: 1;
-        }
-
-        .webring-arrow[aria-disabled="true"] {
-            opacity: 0.4;
-            pointer-events: none;
-        }
-    </style>
+</html>

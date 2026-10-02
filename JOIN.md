@@ -47,7 +47,7 @@ Copy this HTML into your website:
     href="#"
     aria-label="Previous webring site"
   >
-    &larr; Previous
+    &larr;
   </a>
 
   <a
@@ -55,7 +55,7 @@ Copy this HTML into your website:
     href="#"
     aria-label="Next webring site"
   >
-    Next &rarr;
+    &rarr;
   </a>
 </nav>
 
