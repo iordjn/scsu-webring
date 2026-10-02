@@ -24,6 +24,10 @@ When the visitor clicks an arrow, the browser leaves the current page. The
 destination site loads `webring.js` again, so the navigation is recalculated
 for that site. The previous page does not need to keep running.
 
+The hub page is not a member. It uses `data-hub="true"` so its Previous arrow
+opens the last member and its Next arrow opens the first member without adding
+the hub URL to `users.json`.
+
 ## Member data
 
 Members are stored in [`users.json`](./users.json):

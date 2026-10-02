@@ -40,7 +40,14 @@ async function loadWebring() {
 function setupNavigation(navigation, users) {
   const previousLink = navigation.querySelector('[data-direction="previous"]');
   const nextLink = navigation.querySelector('[data-direction="next"]');
-  const configuredSiteUrl = navigation.dataset.siteUrl.trim();
+  const isHub = navigation.dataset.hub === 'true';
+
+  if (isHub) {
+    setNavigationLinks(navigation, users[users.length - 1], users[0]);
+    return;
+  }
+
+  const configuredSiteUrl = navigation.dataset.siteUrl?.trim();
   const currentSiteUrl = configuredSiteUrl || window.location.href;
   const currentIndex = users.findIndex(user =>
     normalizeUrl(user.url) === normalizeUrl(currentSiteUrl)
@@ -55,6 +62,13 @@ function setupNavigation(navigation, users) {
 
   const previousUser = users[(currentIndex - 1 + users.length) % users.length];
   const nextUser = users[(currentIndex + 1) % users.length];
+
+  setNavigationLinks(navigation, previousUser, nextUser);
+}
+
+function setNavigationLinks(navigation, previousUser, nextUser) {
+  const previousLink = navigation.querySelector('[data-direction="previous"]');
+  const nextLink = navigation.querySelector('[data-direction="next"]');
 
   if (previousLink) {
     previousLink.href = previousUser.url;
