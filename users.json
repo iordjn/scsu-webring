@@ -1,0 +1,14 @@
+[
+    {
+        "name": "John Doe",
+        "year": 2026,
+        "major": "Computer Science",
+        "url": "https://example.com/johndoe"
+    },
+    {
+        "name": "Jane Smith",
+        "year": 2025,
+        "major": "Information Technology",
+        "url": "https://example.com/janesmith"
+    }
+]

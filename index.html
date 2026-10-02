@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scsu webring</title>
+</head>
+
+<body>
+    <p>
+        Welcome to the SCSU Webring!
+    </p>
+  <h1>SCSU Webring Members</h1>
+
+  <ul id="webring-list">Loading members...</ul>
+
+  <script>
+    async function loadWebring() {
+      try {
+        // Fetch the JSON file
+        const response = await fetch('./users.json');
+
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const users = await response.json();
+
+        const listElement = document.getElementById('webring-list');
+
+        listElement.innerHTML = ''; // Clear loading message
+
+        // Iterate through the array of users
+        users.forEach(user => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML =
+            `${user.name} — ${user.major}, ${user.year} ` +
+            `<a href="${user.url}" target="_blank" rel="noopener">${user.url}</a>`;
+          listElement.appendChild(listItem);
+        });
+      } catch (error) {
+        console.error('Error loading webring sites:', error);
+        document.getElementById('webring-list').innerText = 'Failed to load webring directory.';
+      }
+    }
+
+    loadWebring();
+  </script>
+</body>
+</html>
