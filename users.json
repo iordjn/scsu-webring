@@ -10,5 +10,29 @@
         "year": 2025,
         "major": "Information Technology",
         "url": "https://example.com/janesmith"
+    },
+    {
+        "name": "Alice Johnson",
+        "year": 2030,
+        "major": "Software Engineering",
+        "url": "https://example.com/alicejohnson"
+    },
+    {
+        "name": "Bob Brown",
+        "year": 2027,
+        "major": "Cybersecurity",
+        "url": "https://example.com/bobbrown"
+    },
+    {
+        "name": "Charlie Davis",
+        "year": 2028,
+        "major": "Data Science",
+        "url": "https://example.com/charliedavis"
+    },
+    {
+        "name": "Eve Wilson",
+        "year": 2029,
+        "major": "Artificial Intelligence",
+        "url": "https://example.com/evewilson"
     }
 ]
