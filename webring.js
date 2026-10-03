@@ -98,8 +98,8 @@ function setupNavigation(navigation, members) {
     return;
   }
 
-  const previousUser = users[(currentIndex - 1 + users.length) % users.length];
-  const nextUser = users[(currentIndex + 1) % users.length];
+  const previousUser = members[(currentIndex - 1 + members.length) % members.length];
+  const nextUser = members[(currentIndex + 1) % members.length];
 
   setNavigationLinks(navigation, previousUser, nextUser);
 }
