@@ -1,0 +1,30 @@
+.github-svg-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 24px;
+    height: 24px;
+}
+
+.github-svg-container a {
+    display: block;
+    color: #333;
+    line-height: 0;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.github-svg-container a:hover {
+    color: #cc1042; 
+    transform: translateY(-2px); 
+}
+
+.github-svg-container a:focus-visible {
+            outline: 3px solid #cc1042;
+            outline-offset: 3px;
+}
+
+.github-svg-container svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+}
