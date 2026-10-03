@@ -5,29 +5,67 @@ async function loadWebring() {
   if (!navigation) {
     return;
   }
-
   try {
-    const response = await fetch(navigation.dataset.usersUrl);
+    // LIST OF WEBRING MEMBERS
+    let members = 
+    [
+      {
+          "name": "Jordin Chavez",
+          "year": 2028,
+          "major": "Computer Science",
+          "url": "https://iordjn.github.io/Jordin-Portfolio"
+      },
+      {
+          "name": "John Doe",
+          "year": 2026,
+          "major": "Computer Science",
+          "url": "https://example.com/johndoe"
+      },
+      {
+          "name": "Jane Smith",
+          "year": 2025,
+          "major": "Information Technology",
+          "url": "https://example.com/janesmith"
+      },
+      {
+          "name": "Alice Johnson",
+          "year": 2030,
+          "major": "Software Engineering",
+          "url": "https://example.com/alicejohnson"
+      },
+      {
+          "name": "Bob Brown",
+          "year": 2027,
+          "major": "Cybersecurity",
+          "url": "https://example.com/bobbrown"
+      },
+      {
+          "name": "Charlie Davis",
+          "year": 2028,
+          "major": "Data Science",
+          "url": "https://example.com/charliedavis"
+      },
+      {
+          "name": "Eve Wilson",
+          "year": 2029,
+          "major": "Artificial Intelligence",
+          "url": "https://example.com/evewilson"
+      }
+    ]; // ADD YOUR INFO TO THE BOTTOM OF LIST ^^^
 
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
+      if (listElement) {
+        listElement.innerHTML = '';
 
-    const users = await response.json();
+        members.forEach(member => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML =
+            `${member.name} — ${member.major}, ${member.year} ` +
+            `<a href="${member.url}" target="_blank" rel="noopener">${member.url}</a>`;
+          listElement.appendChild(listItem);
+        });
+      }
 
-    if (listElement) {
-      listElement.innerHTML = '';
-
-      users.forEach(user => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML =
-          `${user.name} — ${user.major}, ${user.year} ` +
-          `<a href="${user.url}" target="_blank" rel="noopener">${user.url}</a>`;
-        listElement.appendChild(listItem);
-      });
-    }
-
-    setupNavigation(navigation, users);
+    setupNavigation(navigation, members);
   } catch (error) {
     console.error('Error loading webring sites:', error);
 
@@ -37,20 +75,20 @@ async function loadWebring() {
   }
 }
 
-function setupNavigation(navigation, users) {
+function setupNavigation(navigation, members) {
   const previousLink = navigation.querySelector('[data-direction="previous"]');
   const nextLink = navigation.querySelector('[data-direction="next"]');
   const isHub = navigation.dataset.hub === 'true';
 
   if (isHub) {
-    setNavigationLinks(navigation, users[users.length - 1], users[0]);
+    setNavigationLinks(navigation, members[members.length - 1], members[0]);
     return;
   }
 
   const configuredSiteUrl = navigation.dataset.siteUrl?.trim();
   const currentSiteUrl = configuredSiteUrl || window.location.href;
-  const currentIndex = users.findIndex(user =>
-    normalizeUrl(user.url) === normalizeUrl(currentSiteUrl)
+  const currentIndex = members.findIndex(member =>
+    normalizeUrl(member.url) === normalizeUrl(currentSiteUrl)
   );
 
   if (currentIndex === -1) {
