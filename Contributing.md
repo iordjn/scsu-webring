@@ -70,46 +70,9 @@ sure your URL is unique. The `url` value must match your site's
 
 ## Step 3: Add the navigation to your website
 
-### Option A: Copy the webring navigation
-
+![navigation widget](./images/nav-widget.png)
 Add this navigation wherever you want the ring to appear. Replace
 `https://your-site.example` with your site's exact URL:
-
-```html
-<nav
-  class="webring-nav"
-  data-site-url="https://your-site.example"
-  aria-label="Webring navigation"
->
-  <a
-    data-direction="previous"
-    href="#"
-    aria-label="Previous webring site"
-  >
-    &larr;
-  </a>
-
-  <a
-    data-direction="next"
-    href="#"
-    aria-label="Next webring site"
-  >
-    &rarr;
-  </a>
-</nav>
-
-<script src="https://iordjn.github.io/scsu-webring/webring.js"></script>
-```
-
-The `data-direction="previous"` and `data-direction="next"` attributes are
-required. The `data-site-url` value must match your member entry, including
-the correct domain and path.
-
-### Option B: Use the provided SVG
-
-The repository includes the SCSU Huskies SVG at
-[`images/SCSU_Huskies_Sec_AnyBG-300x260.svg`](./images/SCSU_Huskies_Sec_AnyBG-300x260.svg).
-You may use it as the visual center or branding for your navigation:
 
 ```html
 <nav
@@ -144,10 +107,14 @@ You may use it as the visual center or branding for your navigation:
     &rarr;
   </a>
 </nav>
+
+<script src="https://iordjn.github.io/scsu-webring/webring.js"></script>
 ```
 
-The SVG is optional visual branding; it does not replace the Previous and
-Next links.
+The `data-direction="previous"` and `data-direction="next"` attributes are
+required. The logo is an image link to the hub, so selecting it always opens
+the SCSU Webring homepage. The `data-site-url` value must match your member
+entry, including the correct domain and path.
 
 ## Step 4: Add the shared script
 

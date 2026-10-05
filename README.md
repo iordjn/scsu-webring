@@ -57,6 +57,17 @@ exact URL used for your member entry:
   </a>
 
   <a
+    href="https://iordjn.github.io/scsu-webring/"
+    aria-label="Visit the SCSU Webring"
+  >
+    <img
+      src="https://iordjn.github.io/scsu-webring/images/SCSU_Huskies_Sec_AnyBG-300x260.svg"
+      alt="SCSU Webring"
+      width="60"
+    >
+  </a>
+
+  <a
     data-direction="next"
     href="#"
     aria-label="Next webring site"
@@ -68,10 +79,10 @@ exact URL used for your member entry:
 <script src="https://iordjn.github.io/scsu-webring/webring.js"></script>
 ```
 
-Both direction links and the shared script are required for the navigation to
-work. The member list is maintained in the `members` array near the top of
-[`webring.js`](./webring.js); contribution details are documented in
-[`Contributing.md`](./Contributing.md).
+The logo link goes to the webring hub. Both direction links and the shared
+script are required for the navigation to work. The member list is maintained
+in the `members` array near the top of [`webring.js`](./webring.js);
+contribution details are documented in [`Contributing.md`](./Contributing.md).
 
 ## Local development
 
