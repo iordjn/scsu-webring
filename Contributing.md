@@ -71,6 +71,7 @@ sure your URL is unique. The `url` value must match your site's
 ## Step 3: Add the navigation to your website
 
 ![navigation widget](./images/nav-widget.png)
+
 Add this navigation wherever you want the ring to appear. Replace
 `https://your-site.example` with your site's exact URL:
 
